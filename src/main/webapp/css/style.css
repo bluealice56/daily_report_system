@@ -17,12 +17,10 @@ body {
     padding-left: 3%;
 }
 
+		/*C8.4編集*/
 h1 {
-    width: 94%;
-    padding-top: 17px;
-    padding-left: 3%;
     font-size: 24px;
-    color: #eeeeee;
+    display: inline;
 }
 
 h2 {
@@ -49,6 +47,54 @@ table, tr, th, td {
     border: 1px solid #cccccc;
 }
 
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th {
+    width: 26%;
+    padding: 10px 2%;
+}
+
+td {
+    width: 66%;
+    padding: 10px 2%;
+}
+
+button {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+#footer {
+    text-align: center;
+}
+
+#flush_success {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #155724;
+    background-color: #d4edda;
+}
+
+#flush_error {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+
+
+
+
 
 		/*C6.6追記*/
 table {
@@ -74,26 +120,68 @@ tr.row0 {
 }
 
 
-th {
-    width: 26%;
-    padding: 10px 2%;
-}
-
-td {
-    width: 66%;
-    padding: 10px 2%;
-}
-
 		/*C6.7追記*/
 select {
     height: 30px;
 }
 
-button {
-    font-size: 14px;
-    padding: 5px 10px;
+		/*C8.4追記*/
+
+#header_menu {
+    width: 57%;
+    padding-top: 17px;
+    padding-left: 3%;
+    display: inline-block;
 }
 
-#footer {
-    text-align: center;
+#employee_name {
+    color: #cccccc;
+    width: 36%;
+    padding-right: 3%;
+    text-align: right;
+    display: inline-block;
 }
+
+#header a {
+    color: #eeeeee;
+}
+
+h1 a {
+    color: #eeeeee;
+}
+
+
+		/*C9.6追記*/
+
+table#report_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#report_list .report_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+table#report_list .report_date {
+    width: 20%;
+}
+
+table#report_list .report_title {
+    width: 37%;
+}
+
+table#report_list .report_action {
+    width: 13%;
+}
+
+		/*C9.9追記*/
+pre {
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}
+
+		/*C10追記*/
+h3 {
+    font-size: larger;
+}
+
+
