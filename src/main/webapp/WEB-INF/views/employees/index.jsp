@@ -21,12 +21,22 @@
                 <tr>
                     <th>社員番号</th>
                     <th>氏名</th>
+
+                    <%-- 追記--%>
+                    <th>顧客名</th>
+                    <%-- 追記--%>
+
                     <th>操作</th>
                 </tr>
                 <c:forEach var="employee" items="${employees}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td><c:out value="${employee.code}" /></td>
                         <td><c:out value="${employee.name}" /></td>
+
+                        <%-- 追記--%>
+                        <td><c:out value="${report.employee.client}" /></td>
+                        <%-- 追記--%>
+
                         <td>
                             <c:choose>
                                 <c:when test="${employee.deleteFlag == AttributeConst.DEL_FLAG_TRUE.getIntegerValue()}">
@@ -55,7 +65,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='?action=${actEmp}&command=${commNew}' />">新規従業員の登録</a></p>
+        <p><a href="<c:url value='?action=${actEmp}&command=${commNew}' />">新規顧客・従業員の登録</a></p>
 
     </c:param>
 </c:import>

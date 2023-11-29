@@ -10,7 +10,7 @@
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
 
-        <h2>日報 詳細ページ</h2>
+        <h2>商談日報 詳細ページ</h2>
 
         <table>
             <tbody>
@@ -24,7 +24,25 @@
                     <td><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
                 </tr>
                 <tr>
-                    <th>内容</th>
+
+
+
+                 <%-- 追記--%>
+
+                <th>顧客名</th>
+                    <td><c:out value="${report.employee.client}" /></td>
+                </tr>
+                <tr>
+
+                <th>商談内容</th>
+                    <td><pre><c:out value="${report.bnContent}" /></pre></td>
+                </tr>
+                <tr>
+                 <%-- 追記--%>
+
+
+
+                    <th>日報内容</th>
                     <td><pre><c:out value="${report.content}" /></pre></td>
                 </tr>
                 <tr>
@@ -42,7 +60,7 @@
 
         <c:if test="${sessionScope.login_employee.id == report.employee.id}">
             <p>
-                <a href="<c:url value='?action=${actRep}&command=${commEdt}&id=${report.id}' />">この日報を編集する</a>
+                <a href="<c:url value='?action=${actRep}&command=${commEdt}&id=${report.id}' />">この商談・日報を編集する</a>
             </p>
         </c:if>
 

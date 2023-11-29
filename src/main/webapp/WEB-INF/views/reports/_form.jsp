@@ -21,11 +21,31 @@
 <c:out value="${sessionScope.login_employee.name}" />
 <br /><br />
 
-<label for="${AttributeConst.REP_TITLE.getValue()}">タイトル</label><br />
+
+<%-- 追記--%>
+
+<label for="${AttributeConst.EMP_CLIENT.getValue()}">顧客名</label><br />
+<input type="text" name="${AttributeConst.EMP_CLIENT.getValue()}" id="${AttributeConst.EMP_CLIENT.getValue()}" value="${report.employee.client}" />
+<br /><br />
+
+<label for="${AttributeConst.REP_BNTITLE.getValue()}">商談タイトル</label><br />
+<input type="text" name="${AttributeConst.REP_BNTITLE.getValue()}" id="${AttributeConst.REP_BNTITLE.getValue()}" value="${report.bnTitle}" />
+<br /><br />
+
+<label for="${AttributeConst.REP_BNCONTENT.getValue()}">商談内容</label><br />
+<textarea  name="${AttributeConst.REP_BNCONTENT.getValue()}" id="${AttributeConst.REP_BNCONTENT.getValue()}" rows="10" cols="50">${report.bnContent}</textarea>
+<br /><br />
+
+<%-- 追記--%>
+
+
+
+
+<label for="${AttributeConst.REP_TITLE.getValue()}">日報タイトル</label><br />
 <input type="text" name="${AttributeConst.REP_TITLE.getValue()}" id="${AttributeConst.REP_TITLE.getValue()}" value="${report.title}" />
 <br /><br />
 
-<label for="${AttributeConst.REP_CONTENT.getValue()}">内容</label><br />
+<label for="${AttributeConst.REP_CONTENT.getValue()}">日報内容</label><br />
 <textarea  name="${AttributeConst.REP_CONTENT.getValue()}" id="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />

@@ -15,13 +15,20 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>日報　一覧</h2>
+        <h2>商談・日報　一覧</h2>
         <table id="report_list">
             <tbody>
                 <tr>
                     <th class="report_name">氏名</th>
                     <th class="report_date">日付</th>
-                    <th class="report_title">タイトル</th>
+
+                      <%-- 追記--%>
+                    <th class="employee_client">顧客名</th>
+                    <th class="report_bnTitle">商談</th>
+                    <%--/追記 --%>
+
+
+                    <th class="report_title">日報</th>
                     <th class="report_action">操作</th>
                 </tr>
                 <c:forEach var="report" items="${reports}" varStatus="status">
@@ -30,6 +37,12 @@
                     <tr class="row${status.count % 2}">
                         <td class="report_name"><c:out value="${report.employee.name}" /></td>
                         <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
+
+                       <%-- 追記--%>
+                        <td class="employee_client"><c:out value="${report.employee.client}" /></td>
+                        <td class="report_bnTitle"><c:out value="${report.bnTitle}" /></td>
+                        <%-- /追記--%>
+
                         <td class="report_title">${report.title}</td>
                         <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
                     </tr>
@@ -50,7 +63,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規商談・日報の登録</a></p>
 
     </c:param>
 </c:import>

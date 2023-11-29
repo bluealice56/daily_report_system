@@ -23,6 +23,16 @@
 <input type="text" name="${AttributeConst.EMP_NAME.getValue()}" id="${AttributeConst.EMP_NAME.getValue()}" value="${employee.name}" />
 <br /><br />
 
+
+<%-- 追記--%>
+
+<label <%-- for="${AttributeConst.EMP_CLIANT.getValue()}"--%>>顧客名</label><br />
+ <input type="text" name="${AttributeConst.EMP_CLIENT.getValue()}" id="${AttributeConst.EMP_CLIENT.getValue()}" value="${employee.client}" />
+<br /><br />
+
+<%-- 追記--%>
+
+
 <label for="${AttributeConst.EMP_PASS.getValue()}">パスワード</label><br />
 <input type="password" name="${AttributeConst.EMP_PASS.getValue()}" id="${AttributeConst.EMP_PASS.getValue()}" />
 <br /><br />

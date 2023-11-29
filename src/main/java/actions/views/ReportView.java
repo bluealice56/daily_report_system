@@ -52,4 +52,22 @@ public class ReportView {
      * 更新日時
      */
     private LocalDateTime updatedAt;
+
+    /**
+     * 追記
+     */
+
+    /**
+     * 商談タイトル
+     */
+
+    private String bnTitle;
+
+    /**
+     * 商談内容
+     */
+
+    private String bnContent;
+
+
 }

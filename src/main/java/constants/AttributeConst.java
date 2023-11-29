@@ -32,6 +32,8 @@ public enum AttributeConst {
     EMP_PASS("password"),
     EMP_NAME("name"),
     EMP_ADMIN_FLG("admin_flag"),
+    //追記
+    EMP_CLIENT("client"),
 
     //管理者フラグ
     ROLE_ADMIN(1),
@@ -48,7 +50,18 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content_msg");
+    REP_CONTENT("content_msg"),
+
+
+  //追記
+    REP_BNTITLE("bntitle"),
+  	REP_BNCONTENT("bnContent");
+
+;
+
+
+
+
 
     private final String text;
     private final Integer i;

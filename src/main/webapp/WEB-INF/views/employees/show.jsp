@@ -24,6 +24,15 @@
                     <td><c:out value="${employee.name}" /></td>
                 </tr>
                 <tr>
+
+                <%-- 追記--%>
+                <th>顧客名</th>
+                    <td><c:out value="${employee.client}" /></td>
+                </tr>
+                <tr>
+                <%-- 追記--%>
+
+
                     <th>権限</th>
                     <td><c:choose>
                             <c:when test="${employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}">管理者</c:when>
@@ -52,4 +61,3 @@
         </p>
     </c:param>
 </c:import>
-	

@@ -61,7 +61,7 @@ public class ReportAction extends ActionBase {
             removeSessionScope(AttributeConst.FLUSH);
         }
 
-        //一覧画面を表示
+        //一覧画面を表示[reports/index]に遷移
         forward(ForwardConst.FW_REP_INDEX);
     }
 
@@ -80,7 +80,7 @@ public class ReportAction extends ActionBase {
         rv.setReportDate(LocalDate.now());
         putRequestScope(AttributeConst.REPORT, rv); //日付のみ設定済みの日報インスタンス
 
-        //新規登録画面を表示
+        //新規登録画面を表示[reports/new]に遷移
         forward(ForwardConst.FW_REP_NEW);
 
     }
@@ -117,7 +117,10 @@ public class ReportAction extends ActionBase {
                     getRequestParam(AttributeConst.REP_TITLE),
                     getRequestParam(AttributeConst.REP_CONTENT),
                     null,
-                    null);
+                    null,
+                    getRequestParam(AttributeConst.REP_BNTITLE),
+                    getRequestParam(AttributeConst.REP_BNCONTENT)
+                    );
 
             //日報情報登録
             List<String> errors = service.create(rv);
@@ -160,10 +163,10 @@ public class ReportAction extends ActionBase {
             forward(ForwardConst.FW_ERR_UNKNOWN);
 
         } else {
-
+        	//リクエストスコープから取得するメソッド
             putRequestScope(AttributeConst.REPORT, rv); //取得した日報データ
 
-            //詳細画面を表示
+            //詳細画面を表示[reports/show]に遷移
             forward(ForwardConst.FW_REP_SHOW);
         }
     }
@@ -192,7 +195,7 @@ public class ReportAction extends ActionBase {
             putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
             putRequestScope(AttributeConst.REPORT, rv); //取得した日報データ
 
-            //編集画面を表示
+            //編集画面を表示[reports/edit]に遷移
             forward(ForwardConst.FW_REP_EDIT);
         }
 
@@ -216,6 +219,10 @@ public class ReportAction extends ActionBase {
             rv.setReportDate(toLocalDate(getRequestParam(AttributeConst.REP_DATE)));
             rv.setTitle(getRequestParam(AttributeConst.REP_TITLE));
             rv.setContent(getRequestParam(AttributeConst.REP_CONTENT));
+            //追記
+            rv.setBnTitle(getRequestParam(AttributeConst.REP_BNTITLE));
+            rv.setBnContent(getRequestParam(AttributeConst.REP_BNCONTENT));
+
 
             //日報データを更新する
             List<String> errors = service.update(rv);

@@ -66,7 +66,7 @@ public class TopAction extends ActionBase {
             removeSessionScope(AttributeConst.FLUSH);
         }
 
-        //一覧画面を表示
+        //一覧画面を表示 [topPage/index]に遷移
         forward(ForwardConst.FW_TOP_INDEX);
     }
 

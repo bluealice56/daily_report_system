@@ -42,6 +42,7 @@ public class LoginFilter implements Filter {
     /**
      * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
      */
+    //doFilterはフィルターが通ったとき、必ず通過する。
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         String contextPath = ((HttpServletRequest) request).getContextPath();
@@ -49,12 +50,13 @@ public class LoginFilter implements Filter {
 
         if (servletPath.matches("/css.*")) {
             // CSSフォルダ内は認証処理から除外する
+        	//chain.doFilterは、次のフィルターに進む、ということ。
             chain.doFilter(request, response);
 
         } else {
             HttpSession session = ((HttpServletRequest) request).getSession();
 
-            //クエリパラメータからactionとcommandを取得
+            //クエリパラメータからactionとcommandを取得	
             String action = request.getParameter(ForwardConst.ACT.getValue());
             String command = request.getParameter(ForwardConst.CMD.getValue());
 

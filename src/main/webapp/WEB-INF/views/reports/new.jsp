@@ -8,9 +8,11 @@
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
-        <h2>日報　新規登録ページ</h2>
+        <h2>商談・日報　新規登録ページ</h2>
 
+         <%--POSTで送る、？ --%>
         <form method="POST" action="<c:url value='?action=${action}&command=${commCrt}' />">
+        <%--/form.jspに遷移 --%>
             <c:import url="_form.jsp" />
         </form>
 

@@ -107,10 +107,16 @@ public class EmployeeAction extends ActionBase {
                     getRequestParam(AttributeConst.EMP_CODE),
                     getRequestParam(AttributeConst.EMP_NAME),
                     getRequestParam(AttributeConst.EMP_PASS),
+
                     toNumber(getRequestParam(AttributeConst.EMP_ADMIN_FLG)),
                     null,
                     null,
-                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
+                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue(),
+
+                    //追記
+                    getRequestParam(AttributeConst.EMP_CLIENT)
+                    //追記
+                    );
 
             //アプリケーションスコープからpepper文字列を取得
             String pepper = getContextScope(PropertyConst.PEPPER);
@@ -164,7 +170,7 @@ public class EmployeeAction extends ActionBase {
 
             putRequestScope(AttributeConst.EMPLOYEE, ev); //取得した従業員情報
 
-            //詳細画面を表示
+            //詳細画面を表示[employees/show]
             forward(ForwardConst.FW_EMP_SHOW);
         } //追記
     }
@@ -218,7 +224,13 @@ public class EmployeeAction extends ActionBase {
                     toNumber(getRequestParam(AttributeConst.EMP_ADMIN_FLG)),
                     null,
                     null,
-                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue());
+                    AttributeConst.DEL_FLAG_FALSE.getIntegerValue(),
+
+                  //追記
+                    getRequestParam(AttributeConst.EMP_CLIENT)
+                  //追記
+
+            		);
 
             //アプリケーションスコープからpepper文字列を取得
             String pepper = getContextScope(PropertyConst.PEPPER);

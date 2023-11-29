@@ -94,4 +94,27 @@ public class Report {
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
 
+    /**
+     * 追記
+     */
+    /**
+     * 商談のタイトル
+     */
+
+
+    @Column(name = JpaConst.REP_COL_BNTITLE, length = 255, nullable = false)
+    private String bnTitle;
+
+
+    /**
+     * 商談の内容
+     */
+
+
+    @Lob
+    @Column(name = JpaConst.REP_COL_BNCONTENT, nullable = false)
+    private String bnContent;
+
+
+
 }

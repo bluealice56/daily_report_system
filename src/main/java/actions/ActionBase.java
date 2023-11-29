@@ -1,5 +1,3 @@
-//すべてのActionクラスのスーパークラスとなるクラス
-
 package actions;
 
 import java.io.IOException;
@@ -22,13 +20,8 @@ import constants.PropertyConst;
  *
  */
 public abstract class ActionBase {
-	//Webアプリケーションのコンテキスト情報のフィールド
     protected ServletContext context;
-    //リクエスト情報のオブジェクトのフィールド.
-    //フロントコントローラの doGet メソッドおよび doPost メソッドの引数の内容
     protected HttpServletRequest request;
-    //レスポンス情報のオブジェクトのフィールド
-    //フロントコントローラの doGet メソッドおよび doPost メソッドの引数の内容
     protected HttpServletResponse response;
 
     /**
@@ -38,7 +31,6 @@ public abstract class ActionBase {
      * @param servletRequest
      * @param servletResponse
      */
-    //各クラスフィールドの値を設定します。
     public void init(
             ServletContext servletContext,
             HttpServletRequest servletRequest,
@@ -53,7 +45,6 @@ public abstract class ActionBase {
      * @throws ServletException
      * @throws IOException
      */
-    //フロントコントローラから直接呼び出されるメソッドです。各サブクラスで内容を実装します。
     public abstract void process() throws ServletException, IOException;
 
     /**

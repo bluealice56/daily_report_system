@@ -1,5 +1,3 @@
-//フロントコントローラ
-
 package controllers;
 
 import java.io.IOException;
@@ -47,8 +45,6 @@ public class FrontController extends HttpServlet {
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
-    //doPost メソッドの中で doGet メソッドを呼び出していますので、
-    //POST通信／GET通信にかかわらず、 doGet 内へ記述した処理が動作します。
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
@@ -71,7 +67,6 @@ public class FrontController extends HttpServlet {
             String actionString = request.getParameter(ForwardConst.ACT.getValue());
 
             //該当するActionオブジェクトを作成 (例:リクエストからパラメータ action=Employee の場合、actions.EmployeeActionオブジェクト)
-            //クラス名を元に、そのクラスのインスタンスを生成
             type = Class.forName(String.format("actions.%sAction", actionString));
 
             //ActionBaseのオブジェクトにキャスト(例:actions.EmployeeActionオブジェクト→actions.ActionBaseオブジェクト)

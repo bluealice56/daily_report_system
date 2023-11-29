@@ -24,7 +24,13 @@ public class ReportConverter {
                 rv.getTitle(),
                 rv.getContent(),
                 rv.getCreatedAt(),
-                rv.getUpdatedAt());
+                rv.getUpdatedAt(),
+
+              //追記
+                rv.getBnTitle(),//商談タイトル
+                rv.getBnContent()//商談内容
+                		);
+
     }
 
     /**
@@ -45,7 +51,11 @@ public class ReportConverter {
                 r.getTitle(),
                 r.getContent(),
                 r.getCreatedAt(),
-                r.getUpdatedAt());
+                r.getUpdatedAt(),
+        //追記
+        r.getBnTitle(),//商談タイトル
+        r.getBnContent()//商談内容
+        		);
     }
 
     /**
@@ -76,6 +86,10 @@ public class ReportConverter {
         r.setContent(rv.getContent());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
+      //追記
+        r.setBnTitle(rv.getBnTitle());//商談タイトル
+        r.setBnContent(rv.getBnContent());//商談内容
+
 
     }
 

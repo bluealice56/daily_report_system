@@ -94,4 +94,15 @@ public class Employee {
     @Column(name = JpaConst.EMP_COL_DELETE_FLAG, nullable = false)
     private Integer deleteFlag;
 
+    /**
+     * 追記
+     */
+
+    /**
+     * 顧客名
+     * */
+
+    @Column(name = JpaConst.EMP_COL_CLIENT, nullable = false)
+    private String client;
+
 }

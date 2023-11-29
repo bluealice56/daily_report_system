@@ -57,4 +57,12 @@ public class EmployeeView {
      */
     private Integer deleteFlag;
 
+    /**
+     * 追記
+     */
+    /**
+     *顧客名
+     */
+    private String client;
+
 }
